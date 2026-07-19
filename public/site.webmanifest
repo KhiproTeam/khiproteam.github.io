@@ -1,0 +1,15 @@
+{
+  "name": "KhiproTeam",
+  "short_name": "KhiproTeam",
+  "description": "বাংলা ভাষা কম্পিউটিংয়ের জন্য ওপেন সোর্স টুল",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5fdfb",
+  "theme_color": "#27c4ae",
+  "lang": "bn",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

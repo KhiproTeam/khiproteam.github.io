@@ -1,0 +1,9 @@
+{
+  "heading": "কমিউনিটি",
+  "subheading": "আমাদের সাথে যুক্ত হন এবং বাংলা ওপেন সোর্স কমিউনিটির অংশ হোন।",
+  "items": {
+    "github": { "name": "GitHub", "href": "https://github.com/khiproteam", "icon": "github", "description": "আমাদের ওপেন সোর্স রিপোজিটরি এক্সপ্লোর করুন, সমস্যা রিপোর্ট করুন এবং কোড অবদান রাখুন।", "action": "রিপোজিটরি দেখুন" },
+    "facebook": { "name": "Facebook", "href": "https://facebook.com/khiproteam", "icon": "facebook", "description": "আপডেট, ঘোষণা এবং কমিউনিটি আলোচনার জন্য আমাদের ফলো করুন।", "action": "পেজ ফলো করুন" },
+    "telegram": { "name": "Telegram", "href": "https://t.me/khiproteam", "icon": "telegram", "description": "রিয়েল-টাইম কথোপকথন এবং সহায়তার জন্য আমাদের Telegram গ্রুপে যোগ দিন।", "action": "গ্রুপে যোগ দিন" }
+  }
+}

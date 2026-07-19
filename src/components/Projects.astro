@@ -1,0 +1,79 @@
+---
+import Icon from './Icon.astro';
+import { bn, en } from '../i18n/messages';
+import { md } from '../i18n/md';
+
+interface Props { lang: 'bn' | 'en'; }
+const { lang } = Astro.props;
+const t = lang === 'en' ? en : bn;
+const p = t.projects as any;
+
+const projects = [
+  {
+    name: p.khipro.name,
+    badgeIcon: 'keyboard',
+    badge: p.khipro.badge,
+    tagline: p.khipro.tagline,
+    description: p.khipro.description,
+    chips: (p.khipro.chips as string[]).map((label, i) => ({ label, icon: (p.khipro.chipsIcons as string[])[i] })),
+    links: p.khipro.links,
+  },
+  {
+    name: p.shorolipi.name,
+    badgeIcon: 'spell-check',
+    badge: p.shorolipi.badge,
+    tagline: p.shorolipi.tagline,
+    description: p.shorolipi.description,
+    chips: (p.shorolipi.chips as string[]).map((label, i) => ({ label, icon: (p.shorolipi.chipsIcons as string[])[i] })),
+    links: p.shorolipi.links,
+  },
+];
+---
+
+<section id="projects" class="py-14 sm:py-16 bg-bg-alt transition-colors duration-300">
+  <div class="w-full max-w-[860px] mx-auto px-6">
+    <header class="text-center mb-10">
+      <h2 class="font-heading text-[clamp(2rem,4vw,2.6rem)] font-extrabold text-text-1 tracking-tight mb-3">{p.heading}</h2>
+      <p class="text-[15px] text-text-2 max-w-[500px] mx-auto leading-relaxed">{p.subheading}</p>
+    </header>
+
+    <div class="flex flex-col gap-6">
+      {projects.map((project) => (
+        <div class="bg-surface border border-border border-l-4 border-l-teal rounded-2xl p-8 sm:p-10 relative overflow-hidden transition-colors duration-300 hover:border-teal hover:-translate-y-0.5 hover:shadow-lg">
+          <div class="flex flex-col lg:grid lg:grid-cols-[1fr_auto] gap-6 items-start">
+            <div>
+              <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-tag-text bg-tag-bg border border-border-mid px-2.5 py-1 rounded-full mb-3 uppercase tracking-wide">
+                <Icon name={project.badgeIcon} />
+                {project.badge}
+              </div>
+              <h3 class="font-heading text-2xl sm:text-[26px] font-bold text-text-1 mb-1 tracking-tight">{project.name}</h3>
+              <p class="text-sm font-medium text-teal-mid mb-4">{project.tagline}</p>
+              <div class="text-[14.5px] leading-relaxed text-text-2 max-w-[560px]" set:html={md(project.description)} />
+              <div class="flex gap-2 mt-5 flex-wrap">
+                {project.chips.map((chip: any) => (
+                  <span class="inline-flex items-center gap-1.5 text-xs font-medium text-text-3 bg-surface-2 border border-border px-2.5 py-1 rounded-full">
+                    <Icon name={chip.icon} class="text-[10px] text-teal" />
+                    {chip.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div class="flex lg:flex-col gap-2">
+              {project.links.map((link: any) => (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-medium no-underline transition-all duration-200 whitespace-nowrap ${link.primary ? 'bg-linear-to-br from-teal to-teal-deep text-white hover:opacity-90' : 'border border-border-mid text-text-2 bg-transparent hover:border-teal hover:text-teal hover:bg-tag-bg'}`}
+                >
+                  <Icon name={link.icon} />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

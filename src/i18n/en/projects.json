@@ -1,0 +1,26 @@
+{
+  "heading": "Our Projects",
+  "subheading": "Open-source tools built by KhiproTeam for the Bengali language community.",
+  "khipro": {
+    "name": "Khipro",
+    "badge": "Keyboard Layout",
+    "tagline": "The First Compositional Lowercase Keyboard Layout for Bangla",
+    "description": "The struggles of Bangla typing — repeatedly pressing Shift, memorizing mixed uppercase and lowercase mappings, moving fingers to the number row to type chandrabindu, lack of support for characters like nukta and double danda, and many more issues. Khipro solves these with a lowercase input-based compositional keyboard layout — neither fixed nor purely phonetic, but the best of both worlds. With the goal of enabling Bangla typing even faster than English, Khipro is now available on Linux, Android, and Windows.",
+    "chips": ["Linux", "Android", "Windows", "Compositional layout"],
+    "chipsIcons": ["linux", "android", "windows", "language"],
+    "links": [
+      { "href": "https://khipro.khiproteam.pro.bd/", "label": "Website", "icon": "globe", "primary": true }
+    ]
+  },
+  "shorolipi": {
+    "name": "Shörolipi",
+    "badge": "Transliteration",
+    "tagline": "Banglish to Bengali, Precisely",
+    "description": "Banglish typing is messy, ambiguous, and inefficient. Shörolipi fixes this with just 26 keys — no obscure symbols, no extra effort. It can be implemented seamlessly on any QWERTY keyboard and captures the exact Bengali pronunciation, making typing faster, clearer, and phonetically precise.",
+    "chips": ["26-key layout", "Phonetically precise", "QWERTY compatible"],
+    "chipsIcons": ["keyboard", "microchip", "bolt"],
+    "links": [
+      { "href": "https://github.com/KhiproTeam/shorolipi", "label": "GitHub", "icon": "github" }
+    ]
+  }
+}

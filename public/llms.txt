@@ -1,0 +1,36 @@
+# KhiproTeam
+
+> KhiproTeam is an open-source software team building Bengali-language computing
+> tools. Flagship projects: Khipro (compositional lowercase Bengali keyboard
+> layout, Linux/Android/Windows) and Shörolipi (26-key unambiguous
+> Banglish-to-Bengali transliteration).
+
+KhiproTeam main site: https://khiproteam.com/
+
+## Projects
+
+### Khipro — Bengali compositional keyboard layout
+- The first compositional lowercase keyboard layout for Bengali.
+- Solves: repeated Shift use, mixed upper/lowercase mapping, hard-to-reach
+  chandrabindu, missing nukta/dual danda.
+- Approach: lowercase-input compositional layout (neither purely fixed nor
+  purely phonetic — combination of both).
+- Platforms: Linux, Android, Windows.
+- Website: https://khipro.khiproteam.pro.bd/
+- Source: https://github.com/khiproteam/khipro
+
+### Shörolipi — Banglish-to-Bengali transliteration
+- 26-key unambiguous (deterministic) Banglish-to-Bengali transliteration.
+- Implementable on any standard QWERTY keyboard.
+- Preserves correct Bengali pronunciation; phonetically exact output.
+- Source: https://github.com/KhiproTeam/shorolipi
+
+## Links
+- GitHub org: https://github.com/khiproteam
+- Facebook: https://facebook.com/khiproteam
+- Telegram: https://t.me/khiproteam
+
+## Team
+- Nafi — Founder & Project Lead. GitHub: https://github.com/rank-coder
+- Kamrul Hasan — Lead Web Developer. Site: https://qomarhsn.com
+- Tarek Rahman — Advisor & Lead QA. GitHub: https://github.com/shoshostro

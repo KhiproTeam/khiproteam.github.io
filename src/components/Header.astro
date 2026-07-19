@@ -1,0 +1,91 @@
+---
+import Icon from './Icon.astro';
+import { bn, en } from '../i18n/messages';
+
+interface Props { lang: 'bn' | 'en'; }
+const { lang } = Astro.props;
+const t = lang === 'en' ? en : bn;
+
+const items = [
+  { url: '#home', name: t.header.home },
+  { url: '#projects', name: t.header.projects },
+  { url: '#team', name: t.header.team },
+  { url: '#community', name: t.header.community },
+];
+
+const otherHref = lang === 'bn' ? '/en/' : '/';
+const otherLabel = lang === 'bn' ? 'EN' : 'BN';
+---
+
+<header class="sticky top-0 z-100 bg-nav-bg border-b border-nav-border max-md:fixed max-md:bottom-0 max-md:top-auto max-md:left-0 max-md:right-0 max-md:w-full max-md:border-b-0 max-md:border-t transition-colors duration-300" role="banner">
+  <!-- Desktop Nav -->
+  <nav class="hidden md:flex items-center justify-between px-14 h-16" role="navigation" aria-label={t.header.mainNav}>
+    <div class="flex items-center gap-2.5">
+      <button
+        class="w-[38px] h-[38px] rounded-[10px] border border-border-mid bg-surface text-text-2 flex items-center justify-center text-[15px] cursor-pointer transition-colors duration-200 hover:bg-tag-bg hover:text-teal hover:border-teal"
+        type="button"
+        data-theme-toggle
+        aria-label={t.header.toggleTheme}
+      >
+        <Icon name="sun" class="theme-icon-light" />
+        <Icon name="moon" class="theme-icon-dark" />
+        <Icon name="desktop" class="theme-icon-system" />
+      </button>
+    </div>
+    <div class="flex items-center gap-1">
+      {items.map((item) => (
+        <a href={item.url} class="nav-link-underline text-sm font-medium text-text-2 px-3.5 py-1.5 rounded-lg no-underline transition-colors duration-200 hover:text-teal-mid">{item.name}</a>
+      ))}
+    </div>
+    <a
+      href={otherHref}
+      class="w-[38px] h-[38px] rounded-[10px] border border-border-mid bg-surface text-text-2 flex items-center justify-center text-[13px] font-bold font-heading no-underline transition-colors duration-200 hover:bg-tag-bg hover:text-teal hover:border-teal"
+      aria-label={t.header.switchLanguage}
+    >{otherLabel}</a>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="md:hidden" role="navigation" aria-label={t.header.mobileNav}>
+    <div class="flex items-center justify-between h-16 px-4">
+      <button
+        class="min-w-[44px] min-h-[44px] rounded-[10px] border border-border-mid bg-surface text-text-2 flex items-center justify-center text-[14px] cursor-pointer transition-colors duration-200"
+        type="button"
+        data-theme-toggle
+        aria-label={t.header.toggleTheme}
+      >
+        <Icon name="sun" class="theme-icon-light" />
+        <Icon name="moon" class="theme-icon-dark" />
+        <Icon name="desktop" class="theme-icon-system" />
+      </button>
+      <div class="flex items-center gap-2">
+        <a
+          href={otherHref}
+          class="min-w-[44px] min-h-[44px] rounded-[10px] border border-border-mid bg-surface text-text-2 flex items-center justify-center text-[12px] font-bold font-heading no-underline transition-colors duration-200"
+          aria-label={t.header.switchLanguage}
+        >{otherLabel}</a>
+        <button
+          class="min-w-[44px] min-h-[44px] flex items-center justify-center text-xl text-text-2 cursor-pointer"
+          type="button"
+          data-menu-toggle
+          aria-label={t.header.openMenu}
+          aria-expanded="false"
+        >
+          <Icon name="bars" />
+        </button>
+      </div>
+    </div>
+
+    <div class="fixed inset-0 bottom-16 z-99 pointer-events-none" id="mobile-menu" hidden>
+      <div class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300" data-menu-overlay></div>
+      <div class="absolute bottom-0 left-0 right-0 bg-surface p-4 transition-all duration-300 ease-out max-h-0" data-menu-panel>
+        <ul class="grid grid-cols-2 gap-2 max-[380px]:grid-cols-1">
+          {items.map((item) => (
+            <li>
+              <a href={item.url} class="block px-6 py-4 text-center text-text-2 bg-surface-2 border border-border rounded-lg font-medium no-underline transition-colors duration-200 hover:text-teal-mid hover:border-teal" data-menu-close>{item.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

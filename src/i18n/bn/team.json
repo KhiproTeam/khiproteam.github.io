@@ -1,0 +1,76 @@
+{
+  "heading": "আমাদের টিম",
+  "subheading": "KhiproTeam-এর পেছনের আবেগী মন।",
+  "members": {
+    "nafee": {
+      "name": "নাফি",
+      "avatar": "https://avatars.githubusercontent.com/u/54497225",
+      "project": "Khipro",
+      "role": "ফাউন্ডার এবং প্রজেক্ট লিড",
+      "socials": [
+        {
+          "href": "https://github.com/rank-coder/",
+          "label": "GitHub",
+          "icon": "github"
+        },
+        {
+          "href": "https://t.me/RankCoder",
+          "label": "Telegram",
+          "icon": "telegram"
+        },
+        {
+          "href": "https://www.facebook.com/profile.php?id=61585963026919",
+          "label": "Facebook",
+          "icon": "facebook"
+        }
+      ]
+    },
+    "qomarul": {
+      "name": "কমারুল হাসান",
+      "avatar": "https://avatars.githubusercontent.com/u/142052078",
+      "project": "Khipro",
+      "role": "লিড সফটওয়্যার ইঞ্জিনিয়ার",
+      "socials": [
+        { "href": "https://qomarhsn.com", "label": "Website", "icon": "globe" },
+        {
+          "href": "https://github.com/qomarhsn",
+          "label": "GitHub",
+          "icon": "github"
+        },
+        {
+          "href": "https://t.me/qomarhsn",
+          "label": "Telegram",
+          "icon": "telegram"
+        },
+        {
+          "href": "https://facebook.com/qomarhsn",
+          "label": "Facebook",
+          "icon": "facebook"
+        }
+      ]
+    },
+    "tareq": {
+      "name": "তারেক রহমান",
+      "avatar": "https://avatars.githubusercontent.com/u/213461062",
+      "project": "Khipro",
+      "role": "উপদেষ্টা এবং লিড কোয়ালিটি টেস্টার",
+      "socials": [
+        {
+          "href": "https://github.com/shoshostro",
+          "label": "GitHub",
+          "icon": "github"
+        },
+        {
+          "href": "https://t.me/shoshostro",
+          "label": "Telegram",
+          "icon": "telegram"
+        },
+        {
+          "href": "https://facebook.com/shoshostro",
+          "label": "Facebook",
+          "icon": "facebook"
+        }
+      ]
+    }
+  }
+}

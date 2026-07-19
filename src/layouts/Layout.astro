@@ -1,0 +1,168 @@
+---
+import '../styles/app.css';
+import { bn, en } from '../i18n/messages';
+
+interface Props { lang: 'bn' | 'en'; }
+const { lang } = Astro.props;
+const m = lang === 'en' ? en.meta : bn.meta;
+
+const title = m.title;
+const description = m.description;
+const canonical = Astro.url.href;
+const ogImage = new URL('/img/og.png', Astro.url).href;
+const logoUrl = new URL('/img/icon-512.png', Astro.url).href;
+const ogImageAlt = m.ogImageAlt;
+const locale = lang === 'en' ? 'en_US' : 'bn_BD';
+
+const site = 'https://khiproteam.com';
+const alternates = [
+  { hreflang: 'bn', href: `${site}/` },
+  { hreflang: 'en', href: `${site}/en/` },
+  { hreflang: 'x-default', href: `${site}/` },
+];
+
+// Structured data (@graph). Verify license/downloadUrl URLs before deploy (see audit findings/schema.md).
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${site}/#organization`,
+      name: 'KhiproTeam',
+      alternateName: 'ক্ষিপ্রটিম',
+      url: `${site}/`,
+      logo: logoUrl,
+      image: logoUrl,
+      description: m.description,
+      sameAs: [
+        'https://github.com/khiproteam',
+        'https://facebook.com/khiproteam',
+        'https://t.me/khiproteam',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      url: `${site}/`,
+      name: 'KhiproTeam',
+      inLanguage: lang,
+      publisher: { '@id': `${site}/#organization` },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Khipro',
+      alternateName: 'ক্ষিপ্র',
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Linux, Android, Windows',
+      url: 'https://khipro.khiproteam.pro.bd/',
+      downloadUrl: 'https://github.com/khiproteam/khipro/releases',
+      codeRepository: 'https://github.com/khiproteam/khipro',
+      inLanguage: 'bn',
+      author: { '@id': `${site}/#organization` },
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Shörolipi',
+      alternateName: ['Shorolipi', 'সরলিপি'],
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Cross-platform',
+      url: 'https://github.com/KhiproTeam/shorolipi',
+      codeRepository: 'https://github.com/KhiproTeam/shorolipi',
+      inLanguage: 'bn',
+      author: { '@id': `${site}/#organization` },
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+  ],
+};
+
+// GitHub Pages can't set HTTP headers; this CSP meta covers what <meta http-equiv> enforces (HSTS/frame-ancestors need a custom domain — deferred).
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: https://avatars.githubusercontent.com",
+  "font-src 'self' https://fonts.gstatic.com",
+  "connect-src 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+].join('; ');
+---
+
+<!doctype html>
+<html lang={lang} data-theme="system">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="KhiproTeam" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5fdfb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#071c19" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content={csp} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => (
+      <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+    ))}
+    <title>{title}</title>
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:site_name" content="KhiproTeam" />
+    <meta property="og:locale" content={locale} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <!-- Favicon + PWA icons -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/img/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap" />
+
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+
+    <!-- Inline theme init to prevent flash -->
+    <script is:inline>
+      (function () {
+        var stored = localStorage.getItem('khiproteam-theme');
+        var theme = stored && ['light', 'dark', 'system'].indexOf(stored) !== -1 ? stored : 'system';
+        document.documentElement.setAttribute('data-theme', theme);
+        var sysPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-system-pref', sysPref);
+        document.documentElement.setAttribute('data-actual-theme', theme === 'system' ? sysPref : theme);
+      })();
+    </script>
+  </head>
+  <body class="bg-bg text-text-1 font-body min-h-screen transition-colors duration-300">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:z-9999 focus:px-4 focus:py-2 focus:bg-teal focus:text-white focus:top-0 focus:left-0 focus:w-auto focus:h-auto focus:m-0 focus:clip-auto"
+    >{m.skipToContent}</a>
+    <slot />
+  </body>
+</html>

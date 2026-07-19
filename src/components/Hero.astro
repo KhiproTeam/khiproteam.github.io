@@ -1,0 +1,45 @@
+---
+import Icon from './Icon.astro';
+import { bn, en } from '../i18n/messages';
+import { md } from '../i18n/md';
+
+interface Props { lang: 'bn' | 'en'; }
+const { lang } = Astro.props;
+const t = lang === 'en' ? en : bn;
+const h = t.hero;
+---
+
+<section id="home" class="relative overflow-hidden flex flex-col items-center justify-center text-center py-16 px-6 sm:py-20 lg:py-24">
+  <!-- Bengali glyphs -->
+  <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+    <span class="absolute top-[6%] left-[3%] font-bengali text-[70px] sm:text-[90px] text-teal-glyph font-semibold -rotate-15">ক</span>
+    <span class="absolute top-[12%] left-[12%] font-bengali text-[50px] sm:text-[65px] text-teal-glyph font-semibold rotate-8">ফ</span>
+    <span class="absolute top-[3%] right-[8%] font-bengali text-[80px] sm:text-[100px] text-teal-glyph font-semibold rotate-12">শ</span>
+    <span class="absolute top-[55%] left-[1%] font-bengali text-[55px] sm:text-[70px] text-teal-glyph font-semibold -rotate-20">গ</span>
+    <span class="absolute top-[68%] right-[3%] font-bengali text-[65px] sm:text-[80px] text-teal-glyph font-semibold rotate-5">ড</span>
+    <span class="absolute top-[30%] right-[1%] font-bengali text-[48px] sm:text-[60px] text-teal-glyph font-semibold -rotate-8">ব</span>
+    <span class="absolute top-[40%] left-[7%] font-bengali text-[40px] sm:text-[50px] text-teal-glyph font-semibold rotate-18">ন</span>
+    <span class="absolute bottom-[5%] left-[30%] font-bengali text-[58px] sm:text-[72px] text-teal-glyph font-semibold -rotate-12">প</span>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+    <h1 class="font-heading text-[clamp(2.5rem,8vw,4.5rem)] font-extrabold leading-none tracking-tight text-text-1 mb-6">
+      <span class="text-teal">{h.titlePre}</span>{h.titlePost}
+    </h1>
+
+    <p class="text-[clamp(1.05rem,2.2vw,1.2rem)] leading-relaxed text-text-2 max-w-[640px] mx-auto mb-3" set:html={md(h.para1)} />
+    <p class="text-[clamp(0.95rem,2vw,1.1rem)] leading-relaxed text-text-3 max-w-[640px] mx-auto mb-10" set:html={md(h.para2)} />
+
+    <div class="flex gap-3 justify-center flex-wrap">
+      <a href="#projects" class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-linear-to-br from-teal to-teal-deep text-white text-[15px] font-medium no-underline transition-transform duration-200 hover:translate-y-[-2px]">
+        <Icon name="layer-group" />
+        {h.exploreProjects}
+      </a>
+      <a href="#community" class="inline-flex items-center gap-2 px-7 py-3 rounded-full border-[1.5px] border-border-mid bg-surface text-text-2 text-[15px] font-medium no-underline transition-colors duration-200 hover:border-teal hover:text-teal hover:bg-tag-bg">
+        <Icon name="users" />
+        {h.community}
+      </a>
+    </div>
+  </div>
+</section>
