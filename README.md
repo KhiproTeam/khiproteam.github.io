@@ -6,7 +6,7 @@ Bilingual (Bengali `bn` at `/`, English `en` at `/en/`), static, no client frame
 
 ## Projects
 
-- **Khipro** — first compositional lowercase Bengali keyboard layout (Linux, Android, Windows). [khipro.khiproteam.pro.bd](https://khipro.khiproteam.pro.bd/) · [source](https://github.com/khiproteam/khipro)
+- **Khipro** — first compositional lowercase Bengali keyboard layout (Linux, Android, Windows). [khipro.khiproteam.com](https://khipro.khiproteam.com/) · [source](https://github.com/khiproteam/khipro)
 - **Shörolipi** — 26-key unambiguous Banglish-to-Bengali transliteration. [source](https://github.com/KhiproTeam/shorolipi)
 
 ## Stack
