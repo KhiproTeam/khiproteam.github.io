@@ -4,6 +4,7 @@
   "items": {
     "github": { "name": "GitHub", "href": "https://github.com/khiproteam", "icon": "github", "description": "Explore our open-source repositories, report issues, and contribute code.", "action": "View repositories" },
     "facebook": { "name": "Facebook", "href": "https://facebook.com/khiproteam", "icon": "facebook", "description": "Follow us for updates, announcements, and community discussions.", "action": "Follow the page" },
-    "telegram": { "name": "Telegram", "href": "https://t.me/khiproteam", "icon": "telegram", "description": "Join our Telegram group for real-time conversations and support.", "action": "Join the group" }
+    "telegram": { "name": "Telegram", "href": "https://t.me/khiproteam", "icon": "telegram", "description": "Join our Telegram group for real-time conversations and support.", "action": "Join the group" },
+    "email": { "name": "Email", "href": "mailto:khiproteam@googlegroups.com", "icon": "email", "description": "Reach us directly for questions, feedback, or collaboration.", "action": "Send an email" }
   }
 }
