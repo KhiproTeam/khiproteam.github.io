@@ -10,6 +10,8 @@ const p = t.projects as any;
 
 const projects = [
   {
+    key: 'khipro',
+    href: p.khipro.links[0].href,
     name: p.khipro.name,
     badgeIcon: 'keyboard',
     badge: p.khipro.badge,
@@ -19,6 +21,8 @@ const projects = [
     links: p.khipro.links,
   },
   {
+    key: 'shorolipi',
+    href: p.shorolipi.links[0].href,
     name: p.shorolipi.name,
     badgeIcon: 'spell-check',
     badge: p.shorolipi.badge,
@@ -39,20 +43,28 @@ const projects = [
 
     <div class="flex flex-col gap-6">
       {projects.map((project) => (
-        <div class="bg-surface border border-border border-l-4 border-l-teal rounded-2xl p-8 sm:p-10 relative overflow-hidden transition-colors duration-300 hover:border-teal hover:-translate-y-0.5 hover:shadow-lg">
+        <div class:list={[`project-card project-card--${project.key}`, "bg-surface border border-border border-l-4 border-l-[color:var(--card-accent)] rounded-2xl p-8 sm:p-10 relative overflow-hidden transition-colors duration-300 hover:border-[color:var(--card-accent)] hover:-translate-y-0.5 hover:shadow-lg"]}>
           <div class="flex flex-col lg:grid lg:grid-cols-[1fr_auto] gap-6 items-start">
             <div>
               <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-tag-text bg-tag-bg border border-border-mid px-2.5 py-1 rounded-full mb-3 uppercase tracking-wide">
                 <Icon name={project.badgeIcon} />
                 {project.badge}
               </div>
-              <h3 class="font-heading text-2xl sm:text-[26px] font-bold text-text-1 mb-1 tracking-tight">{project.name}</h3>
-              <p class="text-sm font-medium text-teal-mid mb-4">{project.tagline}</p>
+              <h3 class="font-heading text-2xl sm:text-[26px] font-bold text-text-1 mb-1 tracking-tight">
+                <a href={project.href} target="_blank" rel="noopener noreferrer" class="no-underline text-inherit transition-colors duration-200 hover:text-[color:var(--card-accent)] hover:underline decoration-2 underline-offset-4">
+                  {project.name}
+                </a>
+              </h3>
+              <p class="text-sm font-medium mb-4">
+                <a href={project.href} target="_blank" rel="noopener noreferrer" class="no-underline text-[color:var(--card-accent)] transition-colors duration-200 hover:underline decoration-2 underline-offset-4">
+                  {project.tagline}
+                </a>
+              </p>
               <div class="text-[14.5px] leading-relaxed text-text-2 max-w-[560px]" set:html={md(project.description)} />
               <div class="flex gap-2 mt-5 flex-wrap">
                 {project.chips.map((chip: any) => (
                   <span class="inline-flex items-center gap-1.5 text-xs font-medium text-text-3 bg-surface-2 border border-border px-2.5 py-1 rounded-full">
-                    <Icon name={chip.icon} class="text-[10px] text-teal" />
+                    <Icon name={chip.icon} class="text-[10px] text-[color:var(--card-accent)]" />
                     {chip.label}
                   </span>
                 ))}
@@ -64,7 +76,7 @@ const projects = [
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-medium no-underline transition-all duration-200 whitespace-nowrap ${link.primary ? 'bg-linear-to-br from-teal to-teal-deep text-white hover:opacity-90' : 'border border-border-mid text-text-2 bg-transparent hover:border-teal hover:text-teal hover:bg-tag-bg'}`}
+                  class={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-medium no-underline transition-all duration-200 whitespace-nowrap ${link.primary ? 'bg-linear-to-br from-[color:var(--card-accent)] to-[color:var(--card-accent-deep)] text-white hover:opacity-90' : 'border border-border-mid text-text-2 bg-transparent hover:border-[color:var(--card-accent)] hover:text-[color:var(--card-accent)] hover:bg-[color:var(--card-accent-soft)]'}`}
                 >
                   <Icon name={link.icon} />
                   {link.label}
@@ -77,3 +89,30 @@ const projects = [
     </div>
   </div>
 </section>
+
+<style>
+  .project-card--khipro {
+    --card-accent: #904347;
+    --card-accent-deep: #7a383c;
+    --card-accent-soft: rgba(144, 67, 71, 0.08);
+  }
+
+  :global([data-actual-theme="dark"]) .project-card--khipro {
+    --card-accent: #c1656a;
+    --card-accent-deep: #d4757a;
+    --card-accent-soft: rgba(193, 101, 106, 0.12);
+  }
+
+  .project-card--shorolipi {
+    --card-accent: #6c5353;
+    --card-accent-deep: #594443;
+    --card-accent-soft: rgba(108, 83, 83, 0.08);
+  }
+
+  :global([data-actual-theme="dark"] .project-card--shorolipi) {
+    --card-accent: #a98d8d;
+    --card-accent-deep: #b9a0a0;
+    --card-accent-soft: rgba(169, 141, 141, 0.12);
+  }
+</style>
+

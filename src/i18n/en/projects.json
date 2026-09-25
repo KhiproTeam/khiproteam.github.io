@@ -9,7 +9,7 @@
     "chips": ["Linux", "Android", "Windows", "Compositional layout"],
     "chipsIcons": ["linux", "android", "windows", "language"],
     "links": [
-      { "href": "https://khipro.khiproteam.pro.bd/", "label": "Website", "icon": "globe", "primary": true }
+      { "href": "https://khipro.khiproteam.com/", "label": "Website", "icon": "globe", "primary": true }
     ]
   },
   "shorolipi": {

@@ -14,6 +14,11 @@ const logoUrl = new URL('/img/icon-512.png', Astro.url).href;
 const ogImageAlt = m.ogImageAlt;
 const locale = lang === 'en' ? 'en_US' : 'bn_BD';
 
+// Link previews are English-only regardless of page locale (#1)
+const previewTitle = 'KhiproTeam - the Creative Minds behind Khipro Compositional Layout';
+const previewDescription = 'A visionary open-source team on a mission to reshape how the Bengali language is used in modern technology.';
+const previewImageAlt = 'KhiproTeam — Bengali language open-source tools';
+
 const site = 'https://khiproteam.com';
 const alternates = [
   { hreflang: 'bn', href: `${site}/` },
@@ -95,7 +100,7 @@ const csp = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
+    <meta name="description" content={previewDescription} />
     <meta name="author" content="KhiproTeam" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5fdfb" />
@@ -113,23 +118,23 @@ const csp = [
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
     <!-- Open Graph -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={previewTitle} />
+    <meta property="og:description" content={previewDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:image:alt" content={previewImageAlt} />
     <meta property="og:site_name" content="KhiproTeam" />
     <meta property="og:locale" content={locale} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={previewTitle} />
+    <meta name="twitter:description" content={previewDescription} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content={ogImageAlt} />
+    <meta name="twitter:image:alt" content={previewImageAlt} />
 
     <!-- Favicon + PWA icons -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
