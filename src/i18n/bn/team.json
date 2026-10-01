@@ -5,8 +5,10 @@
     "nafee": {
       "name": "নাফি",
       "avatar": "https://avatars.githubusercontent.com/u/54497225",
-      "project": "ক্ষিপ্র কম্পোজিশনাল",
+      "project": "ক্ষিপ্রটিম",
       "role": "সংগঠক ও প্রতিষ্ঠাতা",
+      "project": "ক্ষিপ্র কম্পোজিশনাল",
+      "role": "লিড ডেভেলপার",
       "socials": [
         {
           "href": "https://github.com/rank-coder/",
@@ -28,6 +30,8 @@
     "qomarul": {
       "name": "কমারুল হাসান",
       "avatar": "https://avatars.githubusercontent.com/u/142052078",
+      "project": "ক্ষিপ্রটিম",
+      "role": "লিড সফটওয়্যার ইঞ্জিনিয়ার",
       "project": "ক্ষিপ্র কম্পোজিশনাল",
       "role": "লিড সফটওয়্যার ইঞ্জিনিয়ার",
       "socials": [
@@ -56,8 +60,10 @@
     "tareq": {
       "name": "তারেক রহমান",
       "avatar": "https://avatars.githubusercontent.com/u/213461062",
-      "project": "ক্ষিপ্র কম্পোজিশনাল",
-      "role": "উপদেষ্টা, ও গুণগত মান নিরীক্ষক",
+      "project": "ক্ষিপ্রটিম",
+      "role": "উপদেষ্টা",
+      "project": "ক্ষিপ্রটিম",
+      "role": "গুণগত মান নিরীক্ষক",
       "socials": [
         {
           "href": "https://github.com/shoshostro",
