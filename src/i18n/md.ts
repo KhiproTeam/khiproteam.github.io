@@ -27,6 +27,13 @@ instance.renderer.rules.link_open = function (tokens, idx, options, env, self) {
 const cache = new Map<string, string>();
 
 export function md(str: string): string {
+  // A missing i18n key reaches markdown-it as undefined and surfaces as an
+  // opaque "cannot read properties of undefined" deep inside the parser.
+  if (typeof str !== 'string') {
+    throw new Error(
+      `md(): expected a string, got ${String(str)} — missing or misspelled i18n key.`,
+    );
+  }
   const hit = cache.get(str);
   if (hit !== undefined) return hit;
   // renderInline keeps output free of wrapping <p> tags.

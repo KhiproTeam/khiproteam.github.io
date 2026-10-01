@@ -28,8 +28,7 @@ const h = t.hero;
       <span class="text-teal">{h.titlePre}</span>{h.titlePost}
     </h1>
 
-    <p class="text-[clamp(1.05rem,2.2vw,1.2rem)] leading-relaxed text-text-2 max-w-[640px] mx-auto mb-3" set:html={md(h.para1)} />
-    <p class="text-[clamp(0.95rem,2vw,1.1rem)] leading-relaxed text-text-3 max-w-[640px] mx-auto mb-10" set:html={md(h.para2)} />
+    <p class="text-[clamp(1.05rem,2.2vw,1.2rem)] leading-relaxed text-text-2 max-w-[640px] mx-auto mb-10" set:html={md(h.para1)} />
 
     <div class="flex gap-3 justify-center flex-wrap">
       <a href="#projects" class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-linear-to-br from-teal to-teal-deep text-white text-[15px] font-medium no-underline transition-transform duration-200 hover:translate-y-[-2px]">
