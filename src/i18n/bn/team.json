@@ -5,8 +5,8 @@
     "nafee": {
       "name": "নাফি",
       "avatar": "https://avatars.githubusercontent.com/u/54497225",
-      "project": "Khipro",
-      "role": "ফাউন্ডার এবং প্রজেক্ট লিড",
+      "project": "ক্ষিপ্র কম্পোজিশনাল",
+      "role": "সংগঠক ও প্রতিষ্ঠাতা",
       "socials": [
         {
           "href": "https://github.com/rank-coder/",
@@ -28,10 +28,14 @@
     "qomarul": {
       "name": "কমারুল হাসান",
       "avatar": "https://avatars.githubusercontent.com/u/142052078",
-      "project": "Khipro",
+      "project": "ক্ষিপ্র কম্পোজিশনাল",
       "role": "লিড সফটওয়্যার ইঞ্জিনিয়ার",
       "socials": [
-        { "href": "https://qomarhsn.com", "label": "Website", "icon": "globe" },
+        {
+          "href": "https://qomarhsn.com",
+          "label": "Website",
+          "icon": "globe"
+        },
         {
           "href": "https://github.com/qomarhsn",
           "label": "GitHub",
@@ -52,8 +56,8 @@
     "tareq": {
       "name": "তারেক রহমান",
       "avatar": "https://avatars.githubusercontent.com/u/213461062",
-      "project": "Khipro",
-      "role": "উপদেষ্টা এবং লিড কোয়ালিটি টেস্টার",
+      "project": "ক্ষিপ্র কম্পোজিশনাল",
+      "role": "উপদেষ্টা, ও গুণগত মান নিরীক্ষক",
       "socials": [
         {
           "href": "https://github.com/shoshostro",
