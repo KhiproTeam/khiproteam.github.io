@@ -16,7 +16,7 @@ KhiproTeam main site: https://khiproteam.com/
 - Approach: lowercase-input compositional layout (neither purely fixed nor
   purely phonetic — combination of both).
 - Platforms: Linux, Android, Windows.
-- Website: https://khipro.khiproteam.pro.bd/
+- Website: https://khipro.khiproteam.com/
 - Source: https://github.com/khiproteam/khipro
 
 ### Shörolipi — Banglish-to-Bengali transliteration
