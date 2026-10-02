@@ -5,8 +5,10 @@
     "nafee": {
       "name": "Nafi",
       "avatar": "https://avatars.githubusercontent.com/u/54497225",
-      "project": "Khipro",
-      "role": "Founder and Project Lead",
+      "project": "KhiproTeam",
+      "role": "Founder and Organizer",
+      "project_2": "Khipro Layout",
+      "role_2": "Lead Developer",
       "socials": [
         {
           "href": "https://github.com/rank-coder/",
@@ -28,8 +30,10 @@
     "qomarul": {
       "name": "Qomarul Hasan",
       "avatar": "https://avatars.githubusercontent.com/u/142052078",
-      "project": "Khipro",
-      "role": "Lead Software Engineer",
+      "project": "KhiproTeam",
+      "role": "Software Engineer",
+      "project_2": "Khipro Layout",
+      "role_2": "Lead Software Engineer",
       "socials": [
         { "href": "https://qomarhsn.com", "label": "Website", "icon": "globe" },
         {
@@ -50,23 +54,25 @@
       ]
     },
     "tareq": {
-      "name": "Tarek Rahman",
+      "name": "Tareq Rahman",
       "avatar": "https://avatars.githubusercontent.com/u/213461062",
-      "project": "Khipro",
-      "role": "Advisor and Lead Quality Tester",
+      "project": "KhiproTeam",
+      "role": "Advisor",
+      "project_2": "Khipro Layout",
+      "role_2": "Quality Tester",
       "socials": [
         {
-          "href": "https://github.com/shoshostro",
+          "href": "https://github.com/tareqlr",
           "label": "GitHub",
           "icon": "github"
         },
         {
-          "href": "https://t.me/shoshostro",
+          "href": "https://t.me/tareqlr",
           "label": "Telegram",
           "icon": "telegram"
         },
         {
-          "href": "https://facebook.com/shoshostro",
+          "href": "https://facebook.com/tareqlr",
           "label": "Facebook",
           "icon": "facebook"
         }
