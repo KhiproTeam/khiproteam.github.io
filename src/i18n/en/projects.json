@@ -15,7 +15,7 @@
   "shorolipi": {
     "name": "Shörolipi",
     "badge": "Transliteration",
-    "tagline": "Banglish to Bengali, Precisely",
+    "tagline": "Type Banglish exactly the way it sounds",
     "description": "Banglish typing is messy, ambiguous, and inefficient. Shörolipi fixes this with just 26 keys — no obscure symbols, no extra effort. It can be implemented seamlessly on any QWERTY keyboard and captures the exact Bengali pronunciation, making typing faster, clearer, and phonetically precise.",
     "chips": ["26-key layout", "Phonetically precise", "QWERTY compatible"],
     "chipsIcons": ["keyboard", "microchip", "bolt"],
